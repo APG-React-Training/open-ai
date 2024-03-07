@@ -1,0 +1,522 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+    list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+a {
+    text-decoration: none;
+}
+
+/** FONTS **/
+/*! main-text-regular */
+@font-face {
+    font-family: "main-text-regular";
+    src: url("../fonts/sanfranciscodisplay-regular-webfont.woff") format("woff"), url("../fonts/sanfranciscodisplay-regular-webfont.woff2") format("woff2");
+}
+/*! main-text-bold */
+@font-face {
+    font-family: "main-text-bold";
+    src: url("../fonts/sanfranciscodisplay-regular-webfont.woff") format("woff"), url("../fonts/sanfranciscodisplay-regular-webfont.woff2") format("woff2");
+}
+/*! main-text-link */
+@font-face {
+    font-family: "main-text-link";
+    src: url("../fonts/sanfranciscodisplay-regular-webfont.woff") format("woff"), url("../fonts/sanfranciscodisplay-regular-webfont.woff2") format("woff2");
+}
+/*! label-text */
+@font-face {
+    font-family: "label-text";
+    src: url("../fonts/sanfranciscodisplay-regular-webfont.woff") format("woff"), url("../fonts/sanfranciscodisplay-regular-webfont.woff2") format("woff2");
+}
+/*! heading */
+@font-face {
+    font-family: "heading";
+    src: url("../fonts/helveticaneue.woff") format("woff"), url("../fonts/helveticaneue.woff2") format("woff2");
+}
+/** CUSTOM PROPERTIES **/
+:root {
+    /** COLOR **/
+    /*! Background Color */
+    /*! black */
+    --bg-black: #161616;
+    /*! highlight-black */
+    --bg-highlight-black: #212121;
+    /*! white */
+    --bg-white: #fff;
+    /*! white-muted */
+    --bg-white-muted: rgba(255, 255, 255, 0.6);
+    /*! button-blue */
+    --bg-button-blue: #5b42f3;
+    --bg-button-blue-light-30: #d8d2fc;
+    --bg-button-blue-dark-30: #1d0993;
+    /*! bright-green-60 */
+    --bg-bright-green-60: rgba(146, 191, 48, 0.6);
+    /*! bright-green-40 */
+    --bg-bright-green-40: rgba(146, 191, 48, 0.6);
+    /*! Foreground Color */
+    /*! black */
+    --fg-black: #161616;
+    /*! highlight-black */
+    --fg-highlight-black: #212121;
+    /*! white */
+    --fg-white: #fff;
+    /*! white-muted */
+    --fg-white-muted: rgba(255, 255, 255, 0.6);
+    /*! button-blue */
+    --fg-button-blue: #5b42f3;
+    --fg-button-blue-light-30: #d8d2fc;
+    --fg-button-blue-dark-30: #1d0993;
+    /*! bright-green-60 */
+    --fg-bright-green-60: rgba(146, 191, 48, 0.6);
+    /*! bright-green-40 */
+    --fg-bright-green-40: rgba(146, 191, 48, 0.6);
+    /** FONT **/
+    --main-text-regular: "main-text-regular";
+    --main-text-bold: "main-text-bold";
+    --main-text-link: "main-text-link";
+    --label-text: "label-text";
+    --background-transition: background 0.4s ease;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-#fff);
+    font-family: "main-text-regular";
+}
+
+/** UTILITY: Colors **/
+/*! Background Color */
+/*! black */
+.bg-black {
+    background-color: var(--bg-black);
+}
+
+/*! highlight-black */
+.bg-highlight-black {
+    background-color: var(--bg-highlight-black);
+}
+
+/*! white */
+.bg-white {
+    background-color: var(--bg-white);
+}
+
+/*! white-muted */
+.bg-white-muted {
+    background-color: var(--bg-white-muted);
+}
+
+/*! button-blue */
+.bg-button-blue {
+    background-color: var(--bg-button-blue);
+}
+
+.bg-button-blue-light-30 {
+    background-color: var(--bg-button-blue-light-30);
+}
+
+.bg-button-blue-dark-30 {
+    background-color: var(--bg-button-blue-dark-30);
+}
+
+/*! bright-green-60 */
+.bg-bright-green-60 {
+    background-color: var(--bg-bright-green-60);
+}
+
+/*! bright-green-40 */
+.bg-bright-green-40 {
+    background-color: var(--bg-bright-green-40);
+}
+
+/*! Foreground Color */
+/*! black */
+.fg-black {
+    color: var(--fg-black);
+}
+
+/*! highlight-black */
+.fg-highlight-black {
+    color: var(--fg-highlight-black);
+}
+
+/*! white */
+.fg-white {
+    color: var(--fg-white);
+}
+
+/*! white-muted */
+.fg-white-muted {
+    color: var(--fg-white-muted);
+}
+
+/*! button-blue */
+.fg-button-blue {
+    color: var(--fg-button-blue);
+}
+
+.fg-button-blue-light-30 {
+    color: var(--fg-button-blue-light-30);
+}
+
+.fg-button-blue-dark-30 {
+    color: var(--fg-button-blue-dark-30);
+}
+
+/*! bright-green-60 */
+.fg-bright-green-60 {
+    color: var(--fg-bright-green-60);
+}
+
+/*! bright-green-40 */
+.fg-bright-green-40 {
+    color: var(--fg-bright-green-40);
+}
+
+.main-text-regular-12 {
+    font-family: "main-text-regular";
+    font-size: 0.75rem;
+}
+
+.main-text-regular-14 {
+    font-family: "main-text-regular";
+    font-size: 0.875rem;
+}
+
+.main-text-regular-16 {
+    font-family: "main-text-regular";
+    font-size: 1rem;
+}
+
+.main-text-regular-18 {
+    font-family: "main-text-regular";
+    font-size: 1.125rem;
+}
+
+.main-text-regular-20 {
+    font-family: "main-text-regular";
+    font-size: 1.25rem;
+}
+
+.main-text-bold-12 {
+    font-family: "main-text-bold";
+    font-size: 0.75rem;
+}
+
+.main-text-bold-14 {
+    font-family: "main-text-bold";
+    font-size: 0.875rem;
+}
+
+.main-text-bold-16 {
+    font-family: "main-text-bold";
+    font-size: 1rem;
+}
+
+.main-text-bold-18 {
+    font-family: "main-text-bold";
+    font-size: 1.125rem;
+}
+
+.main-text-bold-20 {
+    font-family: "main-text-bold";
+    font-size: 1.25rem;
+}
+
+.main-text-link-12 {
+    font-family: "main-text-link";
+    font-size: 0.75rem;
+}
+
+.main-text-link-14 {
+    font-family: "main-text-link";
+    font-size: 0.875rem;
+}
+
+.main-text-link-16 {
+    font-family: "main-text-link";
+    font-size: 1rem;
+}
+
+.label-text-12 {
+    font-family: "label-text";
+    font-size: 0.75rem;
+}
+
+.label-text-14 {
+    font-family: "label-text";
+    font-size: 0.875rem;
+}
+
+.label-text-16 {
+    font-family: "label-text";
+    font-size: 1rem;
+}
+
+.label-text-18 {
+    font-family: "label-text";
+    font-size: 1.125rem;
+}
+
+.label-text-20 {
+    font-family: "label-text";
+    font-size: 1.25rem;
+}
+
+.label-text-22 {
+    font-family: "label-text";
+    font-size: 1.375rem;
+}
+
+.label-text-24 {
+    font-family: "label-text";
+    font-size: 1.5rem;
+}
+
+.label-text-26 {
+    font-family: "label-text";
+    font-size: 1.625rem;
+}
+
+.label-text-28 {
+    font-family: "label-text";
+    font-size: 1.75rem;
+}
+
+.text-align-left {
+    text-align: left;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.text-align-right {
+    text-align: right;
+}
+
+.is-flex {
+    display: flex;
+}
+
+.is-row {
+    flex-direction: row;
+}
+
+.is-column {
+    flex-direction: column;
+}
+
+.float-right {
+    justify-content: flex-end;
+}
+
+.float-start {
+    justify-content: flex-start;
+}
+
+.float-center {
+    justify-content: center;
+}
+
+.align-start {
+    align-items: flex-start;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.align-end {
+    align-items: flex-end;
+}
+
+h1 {
+    font-family: "heading";
+    font-size: 2.625rem;
+}
+
+h2 {
+    font-family: "heading";
+    font-size: 2rem;
+}
+
+h3 {
+    font-family: "heading";
+    font-size: 1.75rem;
+}
+
+h4 {
+    font-family: "heading";
+    font-size: 1.625rem;
+}
+
+h5 {
+    font-family: "heading";
+    font-size: 1.5rem;
+}
+
+h6 {
+    font-family: "heading";
+    font-size: 1.375rem;
+}
+
+.App {
+    padding: 5%;
+}
+
+.Input input {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    border: 1px solid transparent;
+    border-bottom: 1px solid #ccc;
+}
+.Input input:focus {
+    outline: none;
+}
+.Button {
+    margin: 20px;
+    align-items: center;
+    width: 120px;
+    background-color: var(--bg-button-blue);
+    border: 0;
+    border-radius: 8px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    box-sizing: border-box;
+    color: #ffffff;
+    display: flex;
+    font-size: 16px;
+    justify-content: center;
+    line-height: 1em;
+    max-width: 100%;
+    min-width: 140px;
+    padding: 14px 18px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: var(--background-transition);
+}
+.Button:active, .Button:hover {
+    outline: 0;
+    background-color: var(--bg-button-blue-dark-30);
+    box-shadow: none;
+}
+.Paragraph {
+    padding: 2%;
+    font-size: 1rem;
+    line-height: 2rem;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+}
+.Error {
+    margin: 0 20%;
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.05);
+}
+.Spinner {
+    padding: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Image {
+    padding: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Image img {
+    width: 260px;
+    height: 260px;
+}
+.Form {
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+}
+.Form .button-bar {
+    display: flex;
+    padding: 2%;
+    justify-content: center;
+    align-items: center;
+}
+
