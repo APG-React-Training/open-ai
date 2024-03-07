@@ -1,5 +1,5 @@
 import './resources/styles/main.css'
-import Button from "./src/components/Button"
+import Button from "./components/Button"
 
 const App = () => {
     return(
